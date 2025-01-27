@@ -118,6 +118,28 @@ merlin.imprimir_atributos()
 print("------------")
 michael_jackson.imprimir_atributos()
 
+def personaje_con_mas_vida(personajes):
+    personaje = max(personajes, key=lambda p: p.vida)
+    print(f"El personaje con más vida es {personaje.nombre} con {personaje.vida} puntos de vida.")
+personaje_con_mas_vida(personajes)
+
+def suma_total_inteligencia(personajes):
+    inteligencia_total = sum(p.inteligencia for p in personajes)
+    print(f"La inteligencia total de los personajes es: {inteligencia_total}")
+
+suma_total_inteligencia(personajes)
+
+def personajes_con_vida_mayor(personajes, valor_vida):
+    filtrados = [p for p in personajes if p.vida > valor_vida]
+    if filtrados:
+        print(f"Los personajes con vida mayor a {valor_vida} son:")
+        for p in filtrados:
+            print(f"- {p.nombre}: {p.vida} puntos de vida")
+    else:
+        print(f"No hay personajes con vida mayor a {valor_vida}.")
+
+personajes_con_vida_mayor(personajes, valor_vida_usuario)
+
 
 # tlatoani.elegir_arma()
 # merlin.elegir_arma()
